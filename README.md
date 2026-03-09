@@ -35,7 +35,24 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 2. Launch the Dashboard
+## 2. Train Models and Save Artifacts
+
+Run offline training once to generate/update model artifacts:
+
+```powershell
+python train_and_save_models.py
+```
+
+This creates:
+
+- `artifacts/model_results.joblib`
+
+Notes:
+
+- Training can take several minutes depending on your machine.
+- GPU acceleration is used when available for supported models; otherwise it falls back to CPU.
+
+## 3. Launch the Dashboard
 
 Start Streamlit:
 
@@ -45,7 +62,7 @@ streamlit run app.py
 
 Then open the local URL shown in the terminal (usually `http://localhost:8501`).
 
-## 3. Typical Workflow
+## 4. Typical Workflow
 
 1. Install dependencies.
 2. Run `python train_and_save_models.py`.
